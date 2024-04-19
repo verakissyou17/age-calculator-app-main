@@ -128,7 +128,14 @@ small {
 
 .output p span {
     color: var(--purple);
-    margin-right: 0.5rem;
+    margin-right: 0.5rem; 
+}
+
+.output p span.success {
+    transform: scale(1.2);
+    transform: translateY(10px);
+    transform: translateX(-10px);
+    transition: all 0.5s ease-in-out;
 }
 
  .submit-aria {
