@@ -1,7 +1,7 @@
 const ageForm  = document.getElementById('ageForm');
-const dayInput = document.getElementById('day');
-const monthInput = document.getElementById('month');
-const yearInput = document.getElementById('year');
+const dayInput = document.getElementById('day').value;
+const monthInput = document.getElementById('month').value;
+const yearInput = document.getElementById('year').value;
 const labels = document.querySelectorAll('label');
 const inputs = document.querySelectorAll('input');
 const smalls = document.querySelectorAll('small');
@@ -16,19 +16,18 @@ const yearNow = today.getFullYear();
 
 ageForm.addEventListener('submit', (e) => {
     e.preventDefault();
-const yearValue = Number(yearInput.value);
-const dayValue = Number(dayInput.value);
-const monthValue = Number(monthInput.value);
+    const yearValue = Number(yearInput);
+    const dayValue = Number(dayInput);
+    const monthValue = Number(monthInput);
 
-    function leapYear(year)
-{
-  return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
-}
+    function leapYear(year) {
+        return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+    }
 
-const result = leapYear(Number(yearValue));
+const result = leapYear(yearValue);
 console.log(result);
 
-    if(dayValue === '' || monthValue === '' || yearValue === '') {
+    if(dayInput === '' && monthInput === '' && yearInput === '') {
         labels.forEach(label => {
             label.classList.add('error');
         });
@@ -48,7 +47,7 @@ console.log(result);
        smalls[0].innerText = 'Must be a valid day';
        smalls[1].innerText = 'Must be a valid month';
        smalls[2].innerText = 'Must be in the past';
-    } else if(monthValue === 2 && dayValue > 28 && result === false) {
+    } else if(dayValue > 28 && monthValue === 2 && result === false) {
         labels.forEach(label => {
             label.classList.add('error');
         });
@@ -80,7 +79,7 @@ console.log(result);
         let yearAge = 0;
         yearAge = yearNow - yearValue;
         yearOutput.innerHTML = yearAge;
-        console.log(yearAge)
+        console.log(yearAge);
         yearOutput.classList.add('success');
 
         let monthAge = 0;
