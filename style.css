@@ -87,7 +87,7 @@ hr {
 }
 
 small {
-    margin-top: 0.5em;
+    padding-top: 0.5em;
     color: var(--light-red-color);
     font-size: 0.8rem;
     font-family: "Poppins", sans-serif;
@@ -121,7 +121,7 @@ small {
 .output p {
     display: flex;
     align-items: center;
-    font-size: clamp(3.5rem, 3.148rem + 1.502vw, 4.5rem);
+    font-size: clamp(3.5rem, 2.972rem + 2.254vw, 5rem);
     font-style: italic;
     font-weight: 800;
 }
@@ -135,6 +135,7 @@ small {
     transform: scale(1.2);
     transform: translateY(10px);
     transform: translateX(-10px);
+    transform: translateX(5px);
     transition: all 0.5s ease-in-out;
 }
 
