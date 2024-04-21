@@ -1,7 +1,7 @@
 const ageForm  = document.getElementById('ageForm');
-let dayInput = document.getElementById('day');
-let monthInput = document.getElementById('month');
-let yearInput = document.getElementById('year');
+const dayInput = document.getElementById('day');
+const monthInput = document.getElementById('month');
+const yearInput = document.getElementById('year');
 const labels = document.querySelectorAll('label');
 const inputs = document.querySelectorAll('input');
 const smalls = document.querySelectorAll('small');
@@ -32,20 +32,22 @@ function validateYear () {
         inputs[2].classList.add('error');
         yearOutput.innerText = '--';
     } else {
-        smalls[1].innerText = '';
-        labels[1].classList.remove('error');
+        smalls[2].innerText = '';
+        labels[2].classList.remove('error');
         inputs[2].classList.remove('error');
+        yearOutput.innerText = yearNow - yearValue;
+        yearOutput.classList.add('success');
         calculateAge(days);
     }
 };
 
  function validateMonth () {
-    if(monthInput.value === '') {
+    if (monthInput.value === '') {
         smalls[1].innerText = 'This field is required';
         labels[1].classList.add('error');
         inputs[1].classList.add('error');
         monthOutput.innerText = '--';
-    } else if (monthValue > 12){
+    } else if (monthValue > 12) {
         smalls[1].innerText = 'Must be a valid month';
         labels[1].classList.add('error');
         inputs[1].classList.add('error');
@@ -54,6 +56,8 @@ function validateYear () {
         smalls[1].innerText = '';
         labels[1].classList.remove('error');
         inputs[1].classList.remove('error'); 
+        monthOutput.innerText = monthNow - monthValue;
+        monthOutput.classList.add('success');
         calculateAge(days);
     }
 };
@@ -61,6 +65,7 @@ function validateYear () {
 function validateDay() {
 
     switch(monthValue) {
+        case 0:
         case 1:
         case 3:
         case 5:
@@ -83,6 +88,8 @@ function validateDay() {
                 smalls[0].innerText = '';
                 labels[0].classList.remove('error');
                 inputs[0].classList.remove('error');
+                dayOutput.innerText = dayNow - dayValue;
+                dayOutput.classList.add('success');
                 calculateAge(days);
             }
         break; 
@@ -103,6 +110,8 @@ function validateDay() {
                     smalls[0].innerText = '';
                     labels[0].classList.remove('error');
                     inputs[0].classList.remove('error');
+                    dayOutput.innerText = dayNow - dayValue;
+                    dayOutput.classList.add('success');
                     calculateAge(days);
                 } 
             } else {
@@ -121,6 +130,8 @@ function validateDay() {
                     smalls[0].innerText = '';
                     labels[0].classList.remove('error');
                     inputs[0].classList.remove('error');
+                    dayOutput.innerText = dayNow - dayValue;
+                    dayOutput.classList.add('success');
                     calculateAge(days);
                 }  
             }       
@@ -144,11 +155,14 @@ function validateDay() {
                 smalls[0].innerText = '';
                 labels[0].classList.remove('error');
                 inputs[0].classList.remove('error');
+                dayOutput.innerText = dayNow - dayValue;
+                dayOutput.classList.add('success');
                 calculateAge(days);
             }
-        break;
+        break; 
     };
 };
+
 
 function calculateAge(days) {
     if(dayValue > dayNow) {
@@ -158,22 +172,16 @@ function calculateAge(days) {
 
     if(monthValue > monthNow) {
         monthNow = monthNow + 12;
-        yearNow--;   
+        yearNow = yearNow - 1;
         }
+    };
 
-        yearOutput.innerText = yearNow - yearValue;
-        yearOutput.classList.add('success');
-        monthOutput.innerText = monthNow - monthValue;
-        monthOutput.classList.add('success');
-        dayOutput.innerText = dayNow - dayValue;
-        dayOutput.classList.add('success');
-}
 
 ageForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    validateDay();
-    validateMonth();
     validateYear();
+    validateMonth();
+    validateDay();
 }); 
 
 
