@@ -152,7 +152,7 @@ function validateDay() {
 
 function calculateAge(days) {
     if(dayValue > dayNow) {
-        dayNow += days;
+        dayNow = dayNow + days;
         monthNow = monthNow - 1;
     }
 
