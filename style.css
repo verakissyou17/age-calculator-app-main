@@ -30,6 +30,11 @@ body {
     background-color: var(--light-grey-color);
 }
 
+h1 {
+    font-size: clamp(0.8rem, 0.73rem + 0.3vw, 1rem);
+    margin-bottom: 1em;
+}
+
 main {
     width: 80%;
     max-width: 700px;
@@ -147,7 +152,7 @@ small {
     border: none;
     outline: none;
     background-color: var(--purple);
-    padding: 1em;
+    padding: 1.5em;
     display: flex;
     align-items: center;
     justify-content: center;
