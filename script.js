@@ -38,9 +38,9 @@ ageForm.addEventListener('submit', (e) => {
             smalls[2].innerText = '';
             labels[2].classList.remove('error');
             inputs[2].classList.remove('error');
-            yearOutput.classList.add('success');
             calculateAge(days);
             yearOutput.innerText = yearNow - yearValue;
+            yearOutput.classList.add('play', 'success');
         }
     };
 
@@ -59,9 +59,9 @@ ageForm.addEventListener('submit', (e) => {
             smalls[1].innerText = '';
             labels[1].classList.remove('error');
             inputs[1].classList.remove('error'); 
-            monthOutput.classList.add('success');
             calculateAge(days);
             monthOutput.innerText = monthNow - monthValue;
+            monthOutput.classList.add('play', 'success');
         }
     };
 
@@ -91,9 +91,9 @@ ageForm.addEventListener('submit', (e) => {
                     smalls[0].innerText = '';
                     labels[0].classList.remove('error');
                     inputs[0].classList.remove('error');
-                    dayOutput.classList.add('success');
                     calculateAge(days);
                     dayOutput.innerText = dayNow - dayValue;
+                    dayOutput.classList.add('play', 'success');
                 }
             break; 
             case 2: 
@@ -113,9 +113,9 @@ ageForm.addEventListener('submit', (e) => {
                         smalls[0].innerText = '';
                         labels[0].classList.remove('error');
                         inputs[0].classList.remove('error');
-                        dayOutput.classList.add('success');
                         calculateAge(days);
                         dayOutput.innerText = dayNow - dayValue;
+                        dayOutput.classList.add('play', 'success');
                     } 
                 } else {
                     days = 28;
@@ -133,9 +133,9 @@ ageForm.addEventListener('submit', (e) => {
                         smalls[0].innerText = '';
                         labels[0].classList.remove('error');
                         inputs[0].classList.remove('error');
-                        dayOutput.classList.add('success');
                         calculateAge(days);
                         dayOutput.innerText = dayNow - dayValue;
+                        dayOutput.classList.add('play', 'success');
                     }  
                 }       
             break;
@@ -158,9 +158,9 @@ ageForm.addEventListener('submit', (e) => {
                     smalls[0].innerText = '';
                     labels[0].classList.remove('error');
                     inputs[0].classList.remove('error');
-                    dayOutput.classList.add('success');
                     calculateAge(days);
                     dayOutput.innerText = dayNow - dayValue;
+                    dayOutput.classList.add('play', 'success');
                 }
             break; 
              default: {
@@ -179,9 +179,9 @@ ageForm.addEventListener('submit', (e) => {
                     smalls[0].innerText = '';
                     labels[0].classList.remove('error');
                     inputs[0].classList.remove('error');
-                    dayOutput.classList.add('success');
                     calculateAge(days);
                     dayOutput.innerText = dayNow - dayValue;
+                    dayOutput.classList.add('play', 'success');
                 }
             break;
             }
