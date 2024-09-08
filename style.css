@@ -41,8 +41,8 @@ body {
 
 
 main {
-    width: 80%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
     background-color: white;
     padding: 2em;
@@ -126,12 +126,12 @@ small {
 
 .output {
     margin-top: 2em;
+    width: 100%;
+    padding-left: 0.5em;
 }
 
 .output p {
-    display: flex;
-    align-items: center;
-    font-size: clamp(3.5rem, 2.972rem + 2.254vw, 5rem);
+    font-size: clamp(1.2rem, -0.49rem + 7.211vw, 6rem);
     font-style: italic;
     font-weight: 800;
 }
@@ -150,18 +150,20 @@ small {
 }
 
  .submit-aria {
-   gap: 0;
+   gap: 1em;
 } 
 
 .submitBtn {
     border: none;
     outline: none;
+    cursor: pointer;
+    height: 4rem;
+    width: 5rem;
     background-color: var(--purple);
-    padding: 1.5em;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 2rem;
 }
 
 .submitBtn:hover,
@@ -207,13 +209,15 @@ small {
 
 
 @media (max-width: 500px) {
+    body {
+        padding: 1em;
+    }
     main {
-        width: 90%;
-        max-width: 375px;
+        width: 100%;
+        max-width: 400px;
         padding: 2.5em 1.5em;
     }
 
-    
     .inputs-field {
         max-width: 300px;  
         margin: 0 auto;
@@ -223,10 +227,11 @@ small {
         position: relative;
     }
 
-    .submitBtn {
+    .submitBtn {        
         position: absolute;
         left: 45%;
         right: 45%;
+        width: 4rem;
     }
     }
 
